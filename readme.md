@@ -5,7 +5,7 @@ This package has been built to work with Laravel 5.4.33 and later. Some older ve
 1) Add the package to your compose.json file:
 
 ```json
-    "jameron/regulator": "1.0.*",
+    "jameron/admin": "1.0.*",
 ```
 
 ```
@@ -17,16 +17,16 @@ composer update
 2) Update your providers:
 
 ```php
-        Jameron\Regulator\RegulatorServiceProvider::class,
+    Jameron\Admin\AdminServiceProvider::class,
 ```
 
 3) Update your Facades:
 
 ```php
-        'Regulator' => Jameron\Regulator\Facades\RegulatorFacade::class,
+        'Admin' => Jameron\Admin\Facades\RegulatorFacade::class,
 ```
 
-4) Publish the sass, js, and config:
+4) Publish the config:
 
 ```
 php artisan vendor:publish
