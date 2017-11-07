@@ -1,0 +1,35 @@
+{
+    "name": "jameron/admin",
+    "description": "Admin panel for mananging users, roles, and permissions.",
+    "keywords": ["admin", "regulator"],
+    "homepage": "http://cjmacfarlane.com",
+    "license": "proprietary",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Cameron Macfarlane",
+            "email": "cammac1984@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {"Daylight\\": "src/"}
+    },
+    "autoload-dev": {
+        "classmap": [
+        ]
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Jameron\\Admin\\AdminServiceProvider"
+            ],
+            "aliases": {
+                "Theme": "Jameron\\Admin\\Facades\\Facade"
+            }
+        }
+    },
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": true
+    }
+}
