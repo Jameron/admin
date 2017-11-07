@@ -12,7 +12,7 @@
         }
     ],
     "autoload": {
-        "psr-4": {"Daylight\\": "src/"}
+        "psr-4": {"Jameron\\": "src/"}
     },
     "autoload-dev": {
         "classmap": [
