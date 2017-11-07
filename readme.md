@@ -1,4 +1,4 @@
-This package has been built to work with Laravel 5.4.33 and later. Some older versions may not be compatible. Let's see if we can't get you up and running in 10 steps. If you are starting fresh, create your laravel application first thing and install the regulator package. 
+This package has been built to work with Laravel 5.4.33 and later. Some older versions may not be compatible. If you are starting fresh, create your laravel application first thing and install the regulator package. 
 
 [jameron/regulator](https://github.com/jameron/regulator)
 
