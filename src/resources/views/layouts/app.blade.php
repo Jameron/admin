@@ -17,7 +17,8 @@
 </head>
 <body>
 
-    @include('admin::partials.utils._nav', ['nav' => config('admin.nav')])
+
+    @include('admin::partials.utils._nav', ['nav' => config('admin.nav.roles')[Auth::user->roles()->first()->slug]])
 
     @yield('content')
 

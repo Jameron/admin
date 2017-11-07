@@ -6,50 +6,54 @@ $theme = [
         'height' => 550
     ],
     'nav' => [
-        'logo' => 'images/logo.svg',
-        'logo_link' => 'admin',
-        'style' => 'light',
-        'left' => [
-            'loggedout' => [
-                'list' => []
-            ],
-            'loggedin' => [
-                'list' => [
-                    [
-                        'title' => 'Home',
-                        'url'   =>  'admin',
+        'roles' => [
+            'admin' => [ 
+                'logo' => 'images/logo.svg',
+                'logo_link' => 'admin',
+                'style' => 'light',
+                'left' => [
+                    'loggedout' => [
+                        'list' => []
                     ],
-                ]
-            ]
-        ],
-        'right' => [
-            'loggedout' => [
-                'list' => [
-                    [
-                        'title' => 'Login',
-                        'url'   =>  'login',
-                    ]
-                ]
-            ],
-            'loggedin' => [
-                'list' => [
-                    [
-                        'title' => 'auth.name',
+                    'loggedin' => [
                         'list' => [
                             [
-                                'title' => 'Settings',
-                                'href' => 'admin/settings',
-                                'onclick' => ''
-                            ],
-                            [],
-                            [
-                                'title' => 'Logout',
-                                'href' => 'logout',
-                                'onclick' => 'event.preventDefault();document.getElementById(\'logout-form\').submit();',
-                                'logoutForm' => true
+                                'title' => 'Home',
+                                'url'   =>  'admin',
                             ],
                         ]
+                    ]
+                ],
+                'right' => [
+                    'loggedout' => [
+                        'list' => [
+                            [
+                                'title' => 'Login',
+                                'url'   =>  'login',
+                            ]
+                        ]
                     ],
+                    'loggedin' => [
+                        'list' => [
+                            [
+                                'title' => 'auth.name',
+                                'list' => [
+                                    [
+                                        'title' => 'Settings',
+                                        'href' => 'admin/settings',
+                                        'onclick' => ''
+                                    ],
+                                    [],
+                                    [
+                                        'title' => 'Logout',
+                                        'href' => 'logout',
+                                        'onclick' => 'event.preventDefault();document.getElementById(\'logout-form\').submit();',
+                                        'logoutForm' => true
+                                    ],
+                                ]
+                            ],
+                        ]
+                    ]
                 ]
             ]
         ]
