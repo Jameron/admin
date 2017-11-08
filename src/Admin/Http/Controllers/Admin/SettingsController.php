@@ -17,7 +17,7 @@ class SettingsController extends Controller
 
     public function update(UserPasswordRequest $request)
     {
-        $user = $this->app->make('App\User');
+        $user = resolve('App\User');
         $user = $user->findOrFail(Auth::user()->id);
         $user->password = bcrypt($request->password);
         $user->save();
