@@ -11,6 +11,9 @@
                     <a href="{{ url('/admin/roles') }}" class="btn btn-primary">Manage Roles</a>
                     <a href="{{ url('/admin/permissions') }}" class="btn btn-primary">Manage Permissions</a>                
                     @endif
+                    @if(file_exists(base_path() . '/vendor/jameron/invitations/'))
+                    <a href="{{ url('/admin/invitations') }}" class="btn btn-primary">Manage Invitations</a>
+                    @endif
                 </div>
             </div>
         </div>
