@@ -32,3 +32,8 @@ composer update
 php artisan vendor:publish
 ```
 
+5) Install Bootstrap 4 and Popper.js (Bootstrap wants it)
+
+npm install popper.js --save
+npm install bootstrap@4.0.0-beta.2 --save
+

@@ -1,58 +1,57 @@
 <?php
 
-$theme = [
-    'image' => [
-        'width' => 1265,
-        'height' => 550
-    ],
+$nav = [
     'nav' => [
+        'logged_out' => [
+            'logo' => 'images/logo.svg',
+            'logo_route' => 'admin',
+            'style' => 'light',
+            'left' => [],
+            'right' => [
+                'list' => [
+                    [
+                        'title' => 'Login',
+                        'route'   =>  'login',
+                    ],
+                    [
+                        'title' => 'Sign Up',
+                        'route'   =>  'register',
+                    ]
+                ]
+            ]
+        ],
         'roles' => [
             'admin' => [ 
                 'logo' => 'images/logo.svg',
-                'logo_link' => 'admin',
+                'logo_route' => 'admin',
                 'style' => 'light',
                 'left' => [
-                    'loggedout' => [
-                        'list' => []
-                    ],
-                    'loggedin' => [
-                        'list' => [
-                            [
-                                'title' => 'Home',
-                                'url'   =>  'admin',
-                            ],
-                        ]
+                    'list' => [
+                        [
+                            'title' => 'Home',
+                            'route'   =>  'admin',
+                        ],
                     ]
                 ],
                 'right' => [
-                    'loggedout' => [
-                        'list' => [
-                            [
-                                'title' => 'Login',
-                                'url'   =>  'login',
+                    'list' => [
+                        [
+                            'title' => 'auth.name',
+                            'list' => [
+                                [
+                                    'title' => 'Settings',
+                                    'route' => 'admin/settings',
+                                    'onclick' => ''
+                                ],
+                                [],
+                                [
+                                    'title' => 'Logout',
+                                    'route' => 'logout',
+                                    'onclick' => 'event.preventDefault();document.getElementById(\'logout-form\').submit();',
+                                    'logoutForm' => true
+                                ],
                             ]
-                        ]
-                    ],
-                    'loggedin' => [
-                        'list' => [
-                            [
-                                'title' => 'auth.name',
-                                'list' => [
-                                    [
-                                        'title' => 'Settings',
-                                        'href' => 'admin/settings',
-                                        'onclick' => ''
-                                    ],
-                                    [],
-                                    [
-                                        'title' => 'Logout',
-                                        'href' => 'logout',
-                                        'onclick' => 'event.preventDefault();document.getElementById(\'logout-form\').submit();',
-                                        'logoutForm' => true
-                                    ],
-                                ]
-                            ],
-                        ]
+                        ],
                     ]
                 ]
             ]
@@ -60,4 +59,4 @@ $theme = [
     ]
 ];
 
-return $theme;
+return $nav;

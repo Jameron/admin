@@ -11,7 +11,7 @@
             </button>
 
             <!-- Branding Image -->
-            <a class="navbar-brand" href="{{ url($nav['logo_link']) }}">
+            <a class="navbar-brand" href="{{ url($nav['logo_route']) }}">
                 @if(!empty($nav['logo']))
                     <img src="{{ asset($nav['logo']) }}" class="logo">
                 @else
@@ -23,18 +23,18 @@
         <div class="collapse navbar-collapse" id="app-navbar-collapse">
             <!-- Left Side Of Navbar -->
             <ul class="nav navbar-nav">
-                @if(!Auth::check() && count($nav['left']['loggedout']['list']))
-                    @if(count($nav['left']['loggedout']['list']))
-                        @foreach($nav['left']['loggedout']['list'] as $list_item)
-                            <li><a href="{{ url($list_item['url']) }}">{{ $list_item['title'] }}</a></li>
+                @if(!Auth::check() && count($nav['left']['list']))
+                    @if(count($nav['left']['list']))
+                        @foreach($nav['left']['list'] as $list_item)
+                            <li><a href="{{ url($list_item['route']) }}">{{ $list_item['title'] }}</a></li>
                         @endforeach
                     @else
                         &nbsp;
                     @endif
-                @elseif(Auth::check() && count($nav['left']['loggedin']['list']))
-                    @if(count($nav['left']['loggedin']['list']))
-                        @foreach($nav['left']['loggedin']['list'] as $list_item)
-                            <li><a href="{{ url($list_item['url']) }}">{{ $list_item['title'] }}</a></li>
+                @elseif(Auth::check() && count($nav['left']['list']))
+                    @if(count($nav['left']['list']))
+                        @foreach($nav['left']['list'] as $list_item)
+                            <li><a href="{{ url($list_item['route']) }}">{{ $list_item['title'] }}</a></li>
                         @endforeach
                     @else
                         &nbsp;
@@ -46,14 +46,14 @@
             <ul class="nav navbar-nav navbar-right">
                 <!-- Authentication Links -->
                 @if (Auth::guest())
-                    @foreach($nav['right']['loggedout']['list'] as $list_item)
-                        <li><a href="{{ url($list_item['url']) }}">{{ $list_item['title'] }}</a></li>
+                    @foreach($nav['right']['list'] as $list_item)
+                        <li><a href="{{ url($list_item['route']) }}">{{ $list_item['title'] }}</a></li>
                     @endforeach
                 @else
-                    @if(Auth::check() && count($nav['right']['loggedin']['list']))
-                        @foreach($nav['right']['loggedin']['list'] as $list_item)
+                    @if(Auth::check() && count($nav['right']['list']))
+                        @foreach($nav['right']['list'] as $list_item)
                             @if(!isset($list_item['list']) && isset($list_item['url']) && isset($list_item['title']))
-                                <li><a href="{{ url($list_item['url']) }}">{{ $list_item['title'] }}</a></li>
+                                <li><a href="{{ url($list_item['route']) }}">{{ $list_item['title'] }}</a></li>
                             @elseif(isset($list_item['list']) && isset($list_item['title']))
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -66,12 +66,11 @@
                                     </a>
                                     <ul class="dropdown-menu" role="menu">
                                         @foreach($list_item['list'] as $key1 => $dropdown_list_item)
-
                                             @if(is_array($dropdown_list_item) && count($dropdown_list_item)===0)
                                                 <li role="separator" class="divider"></li>
-                                            @elseif(isset($dropdown_list_item['href']) && isset($dropdown_list_item['title']))
+                                            @elseif(isset($dropdown_list_item['route']) && isset($dropdown_list_item['title']))
                                                 <li>
-                                                    <a href="{{ url($dropdown_list_item['href']) }}" @if(isset($dropdown_list_item['onclick'])) onclick="{{ $dropdown_list_item['onclick'] }}" @endif>
+                                                    <a href="{{ url($dropdown_list_item['route']) }}" @if(isset($dropdown_list_item['onclick'])) onclick="{{ $dropdown_list_item['onclick'] }}" @endif>
                                                         {{ $dropdown_list_item['title'] }}
                                                         @if(isset($dropdown_list_item['logoutForm']) && $dropdown_list_item['logoutForm'])
                                                             <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">{{ csrf_field() }}</form>
