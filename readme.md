@@ -37,3 +37,14 @@ php artisan vendor:publish
 npm install popper.js --save
 npm install bootstrap@4.0.0-beta.2 --save
 
+6) Update the layout file in your 
+
+```
+resources/views/auth/login.blade.php
+resources/views/auth/register.blade.php
+
+```
+
+to use 
+
+@extends('admin::layouts.app')

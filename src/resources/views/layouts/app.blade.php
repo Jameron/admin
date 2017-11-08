@@ -16,8 +16,16 @@
     </script>
 </head>
 <body>
-
-    @include('admin::partials.utils._nav', ['nav' => (Auth::check() && Auth::user()->roles()->first() && isset(config('admin.nav.roles')[Auth::user()->roles()->first()->slug])) ? config('admin.nav.roles')[Auth::user()->roles()->first()->slug] : (!Auth::check()) ? config('admin.nav.logged_out') : []])
+    @if( Auth::check() && Auth::user()->roles()->first() && isset(config('admin.nav.roles')[Auth::user()->roles()->first()->slug])) 
+@endif
+    @include('admin::partials.utils._nav', [
+    'nav' => 
+    ( Auth::check() && 
+      Auth::user()->roles()->first() 
+      && isset(config('admin.nav.roles')[Auth::user()->roles()->first()->slug]) ) 
+      ? config('admin.nav.roles')[Auth::user()->roles()->first()->slug] 
+      :  config('admin.nav.logged_out')
+      ])
     @yield('content')
 
     <!-- Scripts -->

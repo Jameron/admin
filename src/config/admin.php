@@ -6,7 +6,9 @@ $nav = [
             'logo' => 'images/logo.svg',
             'logo_route' => 'admin',
             'style' => 'light',
-            'left' => [],
+            'left' => [
+                'list' => []
+            ],
             'right' => [
                 'list' => [
                     [
