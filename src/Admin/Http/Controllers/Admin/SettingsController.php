@@ -3,7 +3,6 @@
 namespace Jameron\Admin\Http\Controllers\Admin;
 
 use Auth;
-use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Jameron\Regulator\Http\Requests\UserPasswordRequest;
@@ -18,7 +17,8 @@ class SettingsController extends Controller
 
     public function update(UserPasswordRequest $request)
     {
-        $user = User::findOrFail(Auth::user()->id);
+        $user = $this->app->make('App\User');
+        $user = $user->findOrFail(Auth::user()->id);
         $user->password = bcrypt($request->password);
         $user->save();
 
