@@ -23,7 +23,7 @@ $nav = [
             ]
         ],
         'roles' => [
-            'admin' => [ 
+            'admin' => [
                 'logo' => 'images/logo.svg',
                 'logo_route' => 'admin',
                 'style' => 'light',
