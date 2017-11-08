@@ -26,7 +26,7 @@ class AdminServiceProvider extends ServiceProvider
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'admin');
 
         $this->app->bind('App\User', function ($app) {
-            return new App\User();
+            return new \App\User();
         });
     }
 }
