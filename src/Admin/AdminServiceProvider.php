@@ -20,6 +20,7 @@ class AdminServiceProvider extends ServiceProvider
     {
         $this->publishes([
             __DIR__.'/../config/admin.php' => config_path('admin.php'),
+            __DIR__.'/../resources/views/admin/dash.blade.php' => resource_path('views/vendor/admin/dash.blade.php'),
         ]);
 
         $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
