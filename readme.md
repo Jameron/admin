@@ -48,3 +48,9 @@ resources/views/auth/register.blade.php
 to use 
 
 @extends('admin::layouts.app')
+
+
+7) Sup-date dat webpack fsho dawg, gyea
+
+   .sass('resources/assets/admin/sass/admin.scss', 'public/css')
+
