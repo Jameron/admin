@@ -20,11 +20,11 @@ class AdminServiceProvider extends ServiceProvider
     {
         $this->publishes([
             __DIR__.'/../config/admin.php' => config_path('admin.php'),
-            __DIR__.'/../resources/views/admin/dash.blade.php' => resource_path('views/vendor/admin/dash.blade.php'),
+            __DIR__.'/../resources/views' => resource_path('views/vendor'),
         ]);
 
         $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
-        $this->loadViewsFrom(__DIR__.'/../resources/views', 'admin');
+        $this->loadViewsFrom(resource_path('views/vendor'), 'admin');
 
         $this->app->bind('App\User', function ($app) {
             return new \App\User();
