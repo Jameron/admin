@@ -5,7 +5,7 @@ This package has been built to work with Laravel 5.4.33 and later. Some older ve
 1) Add the package to your compose.json file:
 
 ```json
-    "jameron/admin": "1.0.*",
+    "jameron/admin": "*",
 ```
 
 ```
@@ -37,7 +37,17 @@ php artisan vendor:publish
 npm install popper.js --save
 npm install bootstrap@4.0.0-beta.2 --save
 
-6) Update the layout file in your 
+open up that package.json file and take out the old bootstrap 3 sass
+
+    ~~"bootstrap-sass": "^3.3.7",~~
+
+
+open up `resources/assets/js/bootstrap.js` and add this line after Jquery before bootstrap:
+
+    ```window.Popper = require('popper.js').default;```
+
+
+6) Update the layout file both of these views: 
 
 ```
 resources/views/auth/login.blade.php
@@ -50,7 +60,7 @@ to use
 @extends('admin::layouts.app')
 
 
-7) Sup-date dat webpack fsho dawg, gyea
+7) Update webpack config
 
    .sass('resources/assets/admin/sass/admin.scss', 'public/css')
 
