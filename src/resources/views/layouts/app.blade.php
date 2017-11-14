@@ -31,8 +31,9 @@
 
     <!-- Scripts -->
     <script src="/js/app.js"></script>
+    @if(Auth::check() && Auth::user()->roles()->first()->slug==='admin')
     <script src="/js/Regulator.js"></script>
-
+    @endif
     @if(Session::has('success_message'))
     <script>
        // new HideMessage('successMessage');
