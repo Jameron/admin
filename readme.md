@@ -41,6 +41,8 @@ open up that package.json file and take out the old bootstrap 3 sass
 
 <del>"bootstrap-sass": "^3.3.7",</del>
 
+Run: ```npm update```
+
 
 open up `resources/assets/js/bootstrap.js` and add this line after Jquery before bootstrap:
 
