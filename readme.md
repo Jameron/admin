@@ -39,7 +39,7 @@ npm install bootstrap@4.0.0-beta.2 --save
 
 open up that package.json file and take out the old bootstrap 3 sass
 
-    ~~"bootstrap-sass": "^3.3.7",~~
+    <del>"bootstrap-sass": "^3.3.7",</del>
 
 
 open up `resources/assets/js/bootstrap.js` and add this line after Jquery before bootstrap:
