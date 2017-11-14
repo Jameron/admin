@@ -59,10 +59,12 @@ resources/views/auth/register.blade.php
 
 to use 
 
+```php
 @extends('admin::layouts.app')
-
+```
 
 7) Update webpack config
 
+```javascript
    .sass('resources/assets/admin/sass/admin.scss', 'public/css')
-
+```
