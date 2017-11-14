@@ -46,7 +46,7 @@ Run: ```npm update```
 
 open up `resources/assets/js/bootstrap.js` and add this line after Jquery before bootstrap:
 
-    ```window.Popper = require('popper.js').default;```
+```window.Popper = require('popper.js').default;```
 
 
 6) Update the layout file both of these views: 
