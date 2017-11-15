@@ -30,7 +30,14 @@
 
       @if(Auth::check())
           <div id="wrapper">
-              @include('admin::partials.utils._side_nav')
+                @include('admin::partials.utils._side_nav', [
+                'buttons' => 
+                ( Auth::check() && 
+                  Auth::user()->roles()->first() 
+                  && isset(config('admin.side_nav.roles')[Auth::user()->roles()->first()->slug]['buttons']) ) 
+                  ? config('admin.side_nav.roles')[Auth::user()->roles()->first()->slug]['buttons'] 
+                  : [] 
+                  ])
               <div id="page-content-wrapper">
                   @yield('content')
               </div>
