@@ -16,19 +16,4 @@
             <a href="{!! url('/faq_questions') !!}" @if(Request::path()=='faq_questions') class="active" @endif>FAQ<span class="sub_icon glyphicon glyphicon-comment"></span></a>
         </li>
     </ul>
-    <div id="admin-stats">
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="text-center">
-                    <div class="stat-icon">
-                        <i class="glyphicon glyphicon-user"></i>
-                    </div>
-                    <div class="text">
-                        <var>0</var>
-                        <label class="text-muted"> 0 online</label>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 </div>
