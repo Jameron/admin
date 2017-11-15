@@ -32,12 +32,49 @@ $nav = [
                     'class' => 'logo',
                     'route' => 'admin'
                 ],
-                'style' => 'light',
+                'style' => 'dark',
                 'left' => [
                     'list' => [
                         [
                             'title' => 'Home',
                             'route'   =>  'admin',
+                        ],
+                    ]
+                ],
+                'right' => [
+                    'list' => [
+                        [
+                            'title' => 'auth.name',
+                            'list' => [
+                                [
+                                    'title' => 'Settings',
+                                    'route' => 'admin/settings',
+                                    'onclick' => ''
+                                ],
+                                [],
+                                [
+                                    'title' => 'Logout',
+                                    'route' => 'logout',
+                                    'onclick' => 'event.preventDefault();document.getElementById(\'logout-form\').submit();',
+                                    'logoutForm' => true
+                                ],
+                            ]
+                        ],
+                    ]
+                ]
+            ],
+            'user' => [
+                'logo' => [
+                    'image' => 'images/logo.svg',
+                    'class' => 'logo',
+                    'route' => 'dash'
+                ],
+                'style' => 'dark',
+                'left' => [
+                    'list' => [
+                        [
+                            'title' => 'Home',
+                            'route'   =>  'dash',
                         ],
                     ]
                 ],
