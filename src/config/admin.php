@@ -3,8 +3,11 @@
 $nav = [
     'nav' => [
         'logged_out' => [
-            'logo' => 'images/logo.svg',
-            'logo_route' => 'admin',
+            'logo' => [
+                'image' => 'images/logo.svg',
+                'class' => 'logo',
+                'route' => 'admin'
+            ],
             'style' => 'light',
             'left' => [
                 'list' => []
