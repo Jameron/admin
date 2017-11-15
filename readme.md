@@ -83,7 +83,14 @@ Optionally if you would like to use the Admin Bootstrap 4 login form delete the 
    .sass('resources/assets/admin/sass/admin.scss', 'public/css')
 ```
 
-8) If you want a sidenav bar you can edit the config/admin.php file with your buttons list on a per role basis, don't forget that you may need to run ```php artisan config:cache``` when you make changes.
+8) Update your resources/assets/scss/app.scss
+
+```javascript
+@import "~bootstrap/scss/bootstrap";
+@import "~font-awesome/scss/font-awesome";
+```
+
+9) If you want a sidenav bar you can edit the config/admin.php file with your buttons list on a per role basis, don't forget that you may need to run ```php artisan config:cache``` when you make changes.
 
 To add the side nav bar to your view file insert the partial like so:
 
