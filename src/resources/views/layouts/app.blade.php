@@ -27,7 +27,17 @@
       ? config('admin.nav.roles')[Auth::user()->roles()->first()->slug] 
       :  config('admin.nav.logged_out')
       ])
-    @yield('content')
+
+      @if(Auth::check())
+          <div id="wrapper">
+              @include('admin::partials.utils._side_nav')
+              <div id="page-content-wrapper">
+                  @yield('content')
+              </div>
+          </div>
+      @else
+          @yield('content')
+      @endif
 
     <!-- Scripts -->
     <script src="/js/app.js"></script>
