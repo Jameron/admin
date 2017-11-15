@@ -1,3 +1,4 @@
+@if($buttons && $buttons['show'])
 <div id="sidebar-wrapper">
     <ul class="sidebar-nav" id="sidebar">
         @foreach($buttons as $button)

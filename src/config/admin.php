@@ -68,6 +68,7 @@ $nav = [
     'side_nav' => [
         'roles' => [
             'admin' => [
+                'show' => true,
                 'buttons' => [
                    [
                        'title' => 'Dashboard',
