@@ -26,13 +26,13 @@ composer update
         'Admin' => Jameron\Admin\Facades\RegulatorFacade::class,
 ```
 
-4) Publish the config:
+4) Publish the config: (this moves the config file from the vendor directory to the laravel config/ directory)
 
 ```
 php artisan vendor:publish
 ```
 
-5) Install Bootstrap 4 and Popper.js (Bootstrap wants it)
+5) Install Bootstrap 4 and Popper.js (Bootstrap needs popper.js)
 
 First uninstall that old bootstrap 3 sass
 ```
