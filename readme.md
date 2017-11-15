@@ -34,17 +34,19 @@ php artisan vendor:publish
 
 5) Install Bootstrap 4 and Popper.js (Bootstrap wants it)
 
+First uninstall that old bootstrap 3 sass
+```
+npm uninstall --save bootstrap-sass
+```
+
+Then install bootstrap 4 and its dependency popper.js
+
+```
 npm install popper.js --save
 npm install bootstrap@4.0.0-beta.2 --save
+```
 
-open up that package.json file and take out the old bootstrap 3 sass
-
-<del>"bootstrap-sass": "^3.3.7",</del>
-
-Run: ```npm update```
-
-
-open up `resources/assets/js/bootstrap.js` and add this line after Jquery before bootstrap:
+open up `resources/assets/js/bootstrap.js` and add this line <underline>after Jquery before bootstrap</underline>:
 
 ```window.Popper = require('popper.js').default;```
 
@@ -61,6 +63,18 @@ to use
 
 ```php
 @extends('admin::layouts.app')
+```
+
+Optionally if you would like to use the Admin Bootstrap 4 login form delete the form that comes with Laravel and add in the Admin sign_in view partial in the container. The login.blade file might look like this:
+
+```php
+@extends('admin::layouts.app')
+
+@section('content')
+    <div class="container">
+        @include('admin::partials.forms.sign_in')
+    </div>
+@endsection
 ```
 
 7) Update webpack config
