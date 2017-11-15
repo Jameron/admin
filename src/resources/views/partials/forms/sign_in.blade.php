@@ -3,10 +3,10 @@
 
     <h2 class="form-signin-heading">Please sign in</h2>
     <label for="inputEmail" class="sr-only">Email address</label>
-    <input type="email" name="email" value="{{ old('email') }}" id="email" class="form-control" placeholder="Email address" required="" autofocus="">
+    <input type="email" name="email" value="{{ old('email') }}" id="email" class="form-control @if(config('admin.theme')=='dark')form-control-dark @endif" placeholder="Email address" required="" autofocus="">
 
     <label for="inputPassword" class="sr-only">Password</label>
-    <input type="password" id="password" class="form-control" name="password" placeholder="Password" required="">
+    <input type="password" id="password" class="form-control @if(config('admin.theme')=='dark')form-control-dark @endif" name="password" placeholder="Password" required="">
 
     @if ($errors->has('email'))
         <span class="help-block">

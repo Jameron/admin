@@ -1,6 +1,7 @@
 <?php
 
 $nav = [
+    'theme' => 'dark',
     'nav' => [
         'logged_out' => [
             'logo' => [

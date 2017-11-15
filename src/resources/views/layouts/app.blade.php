@@ -16,7 +16,7 @@
         ]); ?>
     </script>
 </head>
-<body>
+<body @if(config('admin.theme')=='dark') class="dark" @endif>
     @if( Auth::check() && Auth::user()->roles()->first() && isset(config('admin.nav.roles')[Auth::user()->roles()->first()->slug])) 
 @endif
     @include('admin::partials.utils._nav', [

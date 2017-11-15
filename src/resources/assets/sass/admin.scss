@@ -113,14 +113,20 @@ a:hover {
     width: inherit;
 }
 
-.row{
+.row {
     margin-left:0px;
     margin-right:0px;
 }
 
 body {
-    background-color: #2b2b2b;
+    color: #1a1c1f;
+    background-color: #fff;
+}
+
+body.dark {
+
     color: #a0a0a0;
+    background-color: #2b2b2b;
 }
 
 #wrapper {
@@ -296,7 +302,7 @@ body {
     height: 20px;
 }
 
-.form-control {
+.form-control-dark {
     color: #a0a0a0;
     background-color: #424242;
     border: 1px solid #353535;
