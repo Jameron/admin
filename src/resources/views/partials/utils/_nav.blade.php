@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md fixed-top @if($nav['style']=='dark') navbar-dark bg-dark @elseif($nav['style']=='light') navbar-light bg-faded @endif">
+<nav class="navbar navbar-expand-md fixed-top @if($nav['style']=='dark') navbar-dark bg-dark @elseif($nav['style']=='light') navbar-light bg-light @endif">
     <a class="navbar-brand" href="{{ url($nav['logo']['route']) }}">
         @if(!empty($nav['logo']))
             <img src="{{ asset($nav['logo']['image']) }}" class="{{ $nav['logo']['class'] }}">
