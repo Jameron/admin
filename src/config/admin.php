@@ -2,12 +2,22 @@
 
 $nav = [
     'theme' => 'dark',
+    'sign_in_view' => [
+        'heading' => 'Sign In.',
+        'logo' => [
+            'image' => 'images/logo.svg',
+            'class' => 'img-fluid',
+            'route' => null,
+            'alt' => 'Company logo'
+        ]
+    ],
     'nav' => [
         'logged_out' => [
             'logo' => [
                 'image' => 'images/logo.svg',
                 'class' => 'logo',
-                'route' => '/'
+                'route' => '/',
+                'alt' => 'Company logo'
             ],
             'style' => 'light',
             'left' => [

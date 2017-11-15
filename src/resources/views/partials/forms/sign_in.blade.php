@@ -1,7 +1,10 @@
 <form class="form-signin" method="POST" action="{{ route('login') }}">
     {{ csrf_field() }}
 
-    <h2 class="form-signin-heading">Please sign in</h2>
+    <h2 class="form-signin-heading">{{ config('admin.sign_in_view.heading') }}</h2>
+    <div class="row">
+        <img src="{{ config('admin.sign_in_view.logo.image') }}" class="{{ config('admin.sign_in_view.logo.class') }}" alt="{{ config('admin.sign_in_view.logo.alt') }}">
+    </div>
     <label for="inputEmail" class="sr-only">Email address</label>
     <input type="email" name="email" value="{{ old('email') }}" id="email" class="form-control @if(config('admin.theme')=='dark')form-control-dark @endif" placeholder="Email address" required="" autofocus="">
 
