@@ -64,7 +64,29 @@ $nav = [
                 ]
             ]
         ]
+    ],
+    'side_nav' => [
+        'roles' => [
+            'admin' => [
+                'buttons' => [
+                   [
+                       'title' => 'Dashboard',
+                       'route' => 'dash' 
+                   ]
+               ]
+           ]
+       ]
     ]
 ];
+
+if(file_exists(base_path() . '/vendor/jameron/regulator/') && isset($nav['side_nav']['roles']['admin'])) { 
+    array_push($nav['side_nav']['roles']['admin']['buttons'], ['title'=>'Users','route'=>'admin/users']);
+    array_push($nav['side_nav']['roles']['admin']['buttons'], ['title'=>'Roles','route'=>'admin/roles']);
+    array_push($nav['side_nav']['roles']['admin']['buttons'], ['title'=>'Permissions','route'=>'admin/permissions']);
+}
+
+if(file_exists(base_path() . '/vendor/jameron/invitations/') && isset($nav['side_nav']['roles']['admin'])) {
+    array_push($nav['side_nav']['roles']['admin']['buttons'], ['title'=>'Invitations','route'=>'admin/invitations']);
+}
 
 return $nav;
