@@ -79,21 +79,22 @@ a:hover {
     border-top: 1px solid #464646;
 }
 
-.panel-default > .panel-heading {
+.panel-dark {
+    border-color: #222;
+    margin-bottom: 20px;
+    background-color: #353535;
+    border: 1px solid #2b2b2b;
+    border-radius: 4px;
+}
+
+.panel-dark > .panel-heading {
     color: #ffffff;
     background-color: #353535;
     border-color: transparent;
 }
 
-.panel-default {
-    border-color: #222;
-}
-
-.panel {
-    margin-bottom: 20px;
-    background-color: #353535;
-    border: 1px solid #2b2b2b;
-    border-radius: 4px;
+.panel-dark > .panel-body > form > .form-group label {
+    color: #999999;
 }
 
 .admin-stats {
@@ -306,6 +307,11 @@ body.dark {
     color: #a0a0a0;
     background-color: #424242;
     border: 1px solid #353535;
+}
+
+.form-control-dark:focus {
+    color: #a0a0a0;
+    background-color: #424242;;
 }
 
 .fadein {
