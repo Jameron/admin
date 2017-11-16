@@ -120,7 +120,8 @@ $nav = [
                 'buttons' => [
                    [
                        'title' => 'Dashboard',
-                       'route' => 'dash' 
+                       'route' => 'dash',
+                       'order' => 1 
                    ]
                ]
            ]
@@ -129,13 +130,27 @@ $nav = [
 ];
 
 if(file_exists(base_path() . '/vendor/jameron/regulator/') && isset($nav['side_nav']['roles']['admin'])) { 
-    array_push($nav['side_nav']['roles']['admin']['buttons'], ['title'=>'Users','route'=>'admin/users']);
-    array_push($nav['side_nav']['roles']['admin']['buttons'], ['title'=>'Roles','route'=>'admin/roles']);
-    array_push($nav['side_nav']['roles']['admin']['buttons'], ['title'=>'Permissions','route'=>'admin/permissions']);
+    array_push($nav['side_nav']['roles']['admin']['buttons'], ['title'=>'Users','route'=>'admin/users','order'=>2]);
+    array_push($nav['side_nav']['roles']['admin']['buttons'], ['title'=>'Roles','route'=>'admin/roles','order'=>3]);
+    array_push($nav['side_nav']['roles']['admin']['buttons'], ['title'=>'Permissions','route'=>'admin/permissions','order'=>4]);
 }
 
 if(file_exists(base_path() . '/vendor/jameron/invitations/') && isset($nav['side_nav']['roles']['admin'])) {
-    array_push($nav['side_nav']['roles']['admin']['buttons'], ['title'=>'Invitations','route'=>'admin/invitations']);
+    array_push($nav['side_nav']['roles']['admin']['buttons'], ['title'=>'Invitations','route'=>'admin/invitations','order'=>5]);
 }
+
+function sortOrder($x,$y) {
+
+    if ($x['order']>$y['order']){
+        return true;
+    } else if ($x['order']<$y['order']){
+        return false;
+    } else {
+        return 0;
+    }
+
+}
+
+usort($nav, 'sortOrder');
 
 return $nav;
