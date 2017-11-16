@@ -13,6 +13,8 @@ $grey_600: #373737;
 $grey_700: #191f29;
 $grey_800: #1a1c1f;
 
+$semi-transparent: rgba(255,255,255, 0.2);
+
 // Text
 $text_on_dark_background: $grey_400;
 $text_on_light_background: $grey_500;
@@ -127,7 +129,7 @@ body.dark a:hover {
 
 .sidebar-dark > .sidebar-nav li a.active {
     color: $white;
-    background: $grey_100;
+    background: $semi-transparent;
     text-decoration: none;
 }
 
@@ -227,18 +229,18 @@ body.dark a:hover {
     #wrapper {
         padding-left: 70px;
         transition: all .4s ease 0s;
-}
-#sidebar-wrapper {
-    left: 70px;
-}
-#wrapper.active {
-    padding-left: 150px;
-}
-#wrapper.active #sidebar-wrapper {
-    left: 150px;
-    width: 150px;
-    transition: all .4s ease 0s;
-}
+    }
+    #sidebar-wrapper {
+        left: 70px;
+    }
+    #wrapper.active {
+        padding-left: 150px;
+    }
+    #wrapper.active #sidebar-wrapper {
+        left: 150px;
+        width: 150px;
+        transition: all .4s ease 0s;
+    }
 }
 
 // Navbar overrides
@@ -265,39 +267,39 @@ body.dark a:hover {
 
 // Login form styles
 .form-signin {
-  margin-top: 110px;
-  max-width: 330px;
-  padding: 15px;
-  margin-left: auto;
-  margin-right: auto;
+    margin-top: 110px;
+    max-width: 330px;
+    padding: 15px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .form-signin .form-signin-heading,
 .form-signin .checkbox {
-  margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 .form-signin .checkbox {
-  font-weight: 400;
+    font-weight: 400;
 }
 .form-signin .form-control {
-  position: relative;
-  box-sizing: border-box;
-  height: auto;
-  padding: 10px;
-  font-size: 16px;
+    position: relative;
+    box-sizing: border-box;
+    height: auto;
+    padding: 10px;
+    font-size: 16px;
 }
 .form-signin .form-control:focus {
-  z-index: 2;
+    z-index: 2;
 }
 .form-signin input[type="email"] {
-  margin-bottom: -1px;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
 }
 .form-signin input[type="password"] {
-  margin-bottom: 10px;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
 }
 
 // Nav bar and stuff
@@ -442,27 +444,28 @@ form.padded {
 
 
 #well {
-  padding: 14px 20px 20px 20px;
-  -webkit-border-radius: 30px;
-  background: -webkit-gradient(linear,left top,left bottom,color-stop(0, $black),color-stop(1, $grey_800));
-  border: 2px solid $grey_600;
-  overflow: hidden;
+    padding: 14px 20px 20px 20px;
+    -webkit-border-radius: 30px;
+    background: -webkit-gradient(linear,left top,left bottom,color-stop(0, $black),color-stop(1, $grey_800));
+    border: 2px solid $grey_600;
+    overflow: hidden;
 }
 
 h2.form-signin-heading  {
-  background: -webkit-gradient(linear,left top,right top,color-stop(0, $grey_600),color-stop(0.4, $grey_600),color-stop(0.5, white),color-stop(0.6, $grey_600),color-stop(1, $grey_600));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -webkit-animation: slidetounlock 5s infinite;
-  padding: 0;
-  width: 200%;
+    color: $semi-transparent;
+    background: -webkit-gradient(linear,left top,right top,color-stop(0, $grey_600),color-stop(0.4, $grey_600),color-stop(0.5, white),color-stop(0.6, $grey_600),color-stop(1, $grey_600));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-animation: slidetounlock 5s infinite;
+    padding: 0;
+    width: 200%;
 }
 
 @-webkit-keyframes slidetounlock {
-  0% {
-    background-position: -720px 0;
-  }
-  100% {
-    background-position: 720px 0;
-  }
+    0% {
+        background-position: -720px 0;
+    }
+    100% {
+        background-position: 720px 0;
+    }
 }
