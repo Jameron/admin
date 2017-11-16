@@ -1,5 +1,5 @@
 @if($side_nav && $side_nav['show'])
-<div id="sidebar-wrapper">
+<div class="sidebar-wrapper @if($side_nav['theme']=='dark') sidebar-dark @endif">
     <ul class="sidebar-nav" id="sidebar">
         @foreach($side_nav['buttons'] as $button)
         <li>

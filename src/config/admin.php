@@ -116,6 +116,7 @@ $nav = [
     'side_nav' => [
         'roles' => [
             'admin' => [
+                'theme' => 'dark',
                 'show' => true,
                 'buttons' => [
                    [
