@@ -127,7 +127,7 @@ body.dark a:hover {
 
 .sidebar-dark > .sidebar-nav li a.active {
     color: $white;
-    background: rgba(255,255,255,0.2);
+    background: $grey_100;
     text-decoration: none;
 }
 
@@ -145,14 +145,14 @@ body.dark a:hover {
 
 .sidebar-nav li a:hover {
     color: $grey_600;
-    background: rgba(255,255,255,0.2);
+    background: $grey_100;
     text-decoration: none;
 }
 
 
 .sidebar-nav li a.active {
     color: $grey_800;
-    background: rgba(255,255,255,0.2);
+    background: $grey_100;
     text-decoration: none;
 }
 
@@ -160,7 +160,7 @@ body.dark a:hover {
 .sidebar-nav li a:focus {
     text-decoration: none;
     color: $white;
-    background: rgba(255,255,255,0.2);
+    background: $grey_100;
 }
 
 .sidebar-nav > .sidebar-brand {
@@ -184,8 +184,6 @@ body.dark a:hover {
     opacity: .7;
 }
 
-
-
 // PAGINATION STYLES
 .pagination > li > a, .pagination > li > span {
     position: relative;
@@ -198,8 +196,6 @@ body.dark a:hover {
     border: 1px solid ;
     margin-left: -1px;
 }
-
-
 
 #main_icon
 {
