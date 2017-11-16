@@ -151,6 +151,6 @@ function sortOrder($x,$y) {
 
 }
 
-usort($nav, 'sortOrder');
+usort($nav['side_nav']['roles']['admin']['buttons'], 'sortOrder');
 
 return $nav;
