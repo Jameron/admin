@@ -1,25 +1,58 @@
+// Backgrounds
+$black: #0e131a;
+$white: #fff;
+$green: #4c4;
+$red: #b03;
+
+$grey_100: #f8f9fa;
+$grey_200: #e0e0e0;
+$grey_300: #e3e6e8;
+$grey_400: #a0a0a0;
+$grey_500: #7c7c92; 
+$grey_600: #373737;
+$grey_700: #191f29;
+$grey_800: #1a1c1f;
+
+// Text
+$text_on_dark_background: $grey_400;
+$text_on_light_background: $grey_500;
+
+// Links
+$link_color_on_dark_background: $grey_300;
+$link_hover_color_on_dark_background: $grey_200;
+
+// Nav bar
+$navbar_dark: $grey_700;
+
+//Side Nav Bar
+$side_nav_light: $grey_100;
+
 body {
-    color: #1a1c1f;
-    background-color: #fff;
+    color: $text_on_light_background;
+    background-color: $white;
 }
 
 body.dark {
-    color: #a0a0a0;
-    background-color: #2b2b2b;
+    color: $text_on_dark_background;
+    background-color: $black;
 }
 
 body.dark a {
-    color: #cccccc;
+    color: $link_color_on_dark_background;
 }
 
 body.dark a:hover {
-    color: #e0e0e0;
+    color: $link_hover_color_on_dark_background;
 }
 
 #wrapper {
     transition: all .4s ease 0s;
     height: 100%;
     padding-left: 250px
+}
+
+.navbar-dark {
+    background-color: $navbar_dark;
 }
 
 #page-content-wrapper {
@@ -42,7 +75,7 @@ body.dark a:hover {
     margin-top: 56px;
     left: 0;
     width: 250px;
-    background: #f8f9fa;
+    background: $grey_800;
     position: fixed;
     height: 100%;
     z-index: 10000;
@@ -59,15 +92,15 @@ body.dark a:hover {
 }
 
 .sidebar-dark {
-    background: #252525;
+    background: $grey_700;
 }
 
 
 .sidebar-nav li a {
-    color: #7c7c92;
-    background: #f8f9fa;
-    border-top: 1px solid #e3e6e8;
-    border-bottom: 1px solid #e3e6e8;
+    color: $grey_500;
+    background: $side_nav_light;
+    border-top: 1px solid $grey_300;
+    border-bottom: 1px solid $grey_300;
     display: block;
     float: left;
     text-decoration: none;
@@ -79,21 +112,21 @@ body.dark a:hover {
     transition: background .5s;
 }
 
-.sidebar-dark li a {
-    color: #999999;
-    background: #252525;
-    border-top: 1px solid #373737;
-    border-bottom: 1px solid #1A1A1A;
+.sidebar-dark > .sidebar-nav li a {
+    color: $grey_400;
+    background: $grey_700;
+    border-top: 1px solid $grey_600;
+    border-bottom: 1px solid $grey_800;
 }
 
-.sidebar-dark li a:hover {
-    color: #fff;
-    background: rgba(255,255,255,0.2);
+.sidebar-dark > .sidebar-nav li a:hover {
+    color: $white;
+    background: none;
     text-decoration: none;
 }
 
-.sidebar-dark li a.active {
-    color: #fff;
+.sidebar-dark > .sidebar-nav li a.active {
+    color: $white;
     background: rgba(255,255,255,0.2);
     text-decoration: none;
 }
@@ -105,20 +138,20 @@ body.dark a:hover {
 }
 
 .sidebar-nav li a {
-    color: #7c7c92;
+    color: $grey_500;
     display: block;
     text-decoration: none;
 }
 
 .sidebar-nav li a:hover {
-    color: #333;
+    color: $grey_600;
     background: rgba(255,255,255,0.2);
     text-decoration: none;
 }
 
 
 .sidebar-nav li a.active {
-    color: #111;
+    color: $grey_800;
     background: rgba(255,255,255,0.2);
     text-decoration: none;
 }
@@ -126,7 +159,7 @@ body.dark a:hover {
 .sidebar-nav li a:active,
 .sidebar-nav li a:focus {
     text-decoration: none;
-    color: #fff;
+    color: $white;
     background: rgba(255,255,255,0.2);
 }
 
@@ -137,17 +170,17 @@ body.dark a:hover {
 }
 
 .sidebar-nav > .sidebar-brand a {
-    color: #999999;
+    color: $grey_500;
 }
 
 .sidebar-nav > .sidebar-brand a:hover {
-    color: #fff;
+    color: $white;
     background: none;
 }
 
 .sidebar_name {
     padding-top: 25px;
-    color: #fff;
+    color: $white;
     opacity: .7;
 }
 
@@ -160,9 +193,9 @@ body.dark a:hover {
     padding: 6px 12px;
     line-height: 1.42857143;
     text-decoration: none;
-    color: #999999;
-    background-color: #505050;
-    border: 1px solid #676767;
+    color: $grey_500;
+    background-color: $grey_600;
+    border: 1px solid ;
     margin-left: -1px;
 }
 
@@ -223,14 +256,14 @@ body.dark a:hover {
 }
 
 .form-control-dark {
-    color: #a0a0a0;
-    background-color: #424242;
-    border: 1px solid #353535;
+    color: $grey_400;
+    background-color: $grey_700;
+    border: 1px solid $grey_700;
 }
 
 .form-control-dark:focus {
-    color: #a0a0a0;
-    background-color: #424242;;
+    color: $grey_400;
+    background-color: $grey_700;
 }
 
 
@@ -242,6 +275,7 @@ body.dark a:hover {
   margin-left: auto;
   margin-right: auto;
 }
+
 .form-signin .form-signin-heading,
 .form-signin .checkbox {
   margin-bottom: 10px;
@@ -283,7 +317,7 @@ body.dark a:hover {
     height: 12px;
     width: 12px;
     margin-right: 0;
-    background-color: #4c4;
+    background-color: $green;
 }
 
 .offline {
@@ -292,7 +326,7 @@ body.dark a:hover {
     height: 12px;
     width: 12px;
     margin-right: 0;
-    background-color: #b03;
+    background-color: $red;
 }
 
 form.padded {
@@ -324,29 +358,29 @@ form.padded {
 }
 
 .table > thead > tr > th {
-    border-bottom: 2px solid #464646;
+    border-bottom: 2px solid $grey_600;
 }
 
 .table > thead > tr > th, .table > thead > tr > td, .table > tbody > tr > th, .table > tbody > tr > td, .table > tfoot > tr > th, .table > tfoot > tr > td {
-    border-top: 1px solid #464646;
+    border-top: 1px solid $grey_600;
 }
 
 .panel-dark {
-    border-color: #222;
+    border-color: $grey_700;
     margin-bottom: 20px;
-    background-color: #353535;
-    border: 1px solid #2b2b2b;
+    background-color: $grey_700;
+    border: 1px solid $grey_700;
     border-radius: 4px;
 }
 
 .panel-dark > .panel-heading {
-    color: #ffffff;
-    background-color: #353535;
+    color: $white;
+    background-color: $grey_700;
     border-color: transparent;
 }
 
 .panel-dark > .panel-body > form > .form-group label {
-    color: #999999;
+    color: $grey_400;
 }
 
 
@@ -407,5 +441,32 @@ form.padded {
 }
 
 .breadcrumb {
-    background-color: #2b2b2b;
+    background-color: $grey_600;
+}
+
+
+#well {
+  padding: 14px 20px 20px 20px;
+  -webkit-border-radius: 30px;
+  background: -webkit-gradient(linear,left top,left bottom,color-stop(0, $black),color-stop(1, $grey_800));
+  border: 2px solid $grey_600;
+  overflow: hidden;
+}
+
+h2.form-signin-heading  {
+  background: -webkit-gradient(linear,left top,right top,color-stop(0, $grey_600),color-stop(0.4, $grey_600),color-stop(0.5, white),color-stop(0.6, $grey_600),color-stop(1, $grey_600));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-animation: slidetounlock 5s infinite;
+  padding: 0;
+  width: 200%;
+}
+
+@-webkit-keyframes slidetounlock {
+  0% {
+    background-position: -720px 0;
+  }
+  100% {
+    background-position: 720px 0;
+  }
 }

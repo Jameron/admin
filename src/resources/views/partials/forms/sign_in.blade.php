@@ -1,9 +1,12 @@
 <form class="form-signin" method="POST" action="{{ route('login') }}">
     {{ csrf_field() }}
-
+    @if(config('admin.sign_in_view.heading'))
     <h2 class="form-signin-heading">{{ config('admin.sign_in_view.heading') }}</h2>
+@endif
     <div class="row">
+        @if(config('admin.sign_in_view.logo.image'))
         <img src="{{ config('admin.sign_in_view.logo.image') }}" class="{{ config('admin.sign_in_view.logo.class') }}" alt="{{ config('admin.sign_in_view.logo.alt') }}">
+        @endif
     </div>
     <label for="inputEmail" class="sr-only">Email address</label>
     <input type="email" name="email" value="{{ old('email') }}" id="email" class="form-control @if(config('admin.theme')=='dark')form-control-dark @endif" placeholder="Email address" required="" autofocus="">
