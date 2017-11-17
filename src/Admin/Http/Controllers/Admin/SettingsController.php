@@ -12,7 +12,7 @@ class SettingsController extends Controller
     public function edit()
     {
         $user = Auth::user();
-        return view('admin::admin.settings', compact('user'));
+        return view('admin::settings', compact('user'));
     }
 
     public function update(UserPasswordRequest $request)
