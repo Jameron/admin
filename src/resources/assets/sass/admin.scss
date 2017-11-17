@@ -254,14 +254,14 @@ body.dark a:hover {
 }
 
 .form-control-dark {
-    color: $grey_400;
-    background-color: $grey_700;
+    color: $black;
+    background-color: $white;
     border: 1px solid $grey_700;
 }
 
 .form-control-dark:focus {
-    color: $grey_400;
-    background-color: $grey_700;
+    color: $black;
+    background-color: $white;
 }
 
 
@@ -363,7 +363,7 @@ form.padded {
     border-top: 1px solid $grey_600;
 }
 
-.panel-dark {
+.card-dark {
     border-color: $grey_700;
     margin-bottom: 20px;
     background-color: $grey_700;
@@ -371,20 +371,11 @@ form.padded {
     border-radius: 4px;
 }
 
-.panel-dark > .panel-heading {
-    color: $white;
-    background-color: $grey_700;
-    border-color: transparent;
-}
-
-.panel-dark > .panel-body > form > .form-group label {
+.card-dark > .card-body > form > .form-group label {
     color: $grey_400;
 }
 
-
-
 // Animations
-
 .fadein {
     -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
     -moz-animation: fadein 2s; /* Firefox < 16 */
@@ -468,4 +459,13 @@ h2.form-signin-heading  {
     100% {
         background-position: 720px 0;
     }
+}
+
+.editable > i {
+    margin-left: 6px;
+    visibility: hidden;
+}
+
+.editable:hover > i {
+    visibility: visible;
 }

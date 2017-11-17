@@ -1,6 +1,10 @@
 <?php
 
 $nav = [
+    'paginate' => [
+        'enabled' => true,
+        'count' => 20
+    ],
     'theme' => 'dark',
     'sign_in_view' => [
         'heading' => 'Sign In.',
