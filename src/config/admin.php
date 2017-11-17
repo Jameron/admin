@@ -23,7 +23,7 @@ $nav = [
                 'route' => '/',
                 'alt' => 'Company logo'
             ],
-            'style' => 'light',
+            'style' => 'dark',
             'left' => [
                 'list' => []
             ],

@@ -104,3 +104,15 @@ To add the side nav bar to your view file insert the partial like so:
   : [] 
   ])
 ```
+
+10) Update your reset password view file to use the bootstrap 4 version provided by this package
+
+Delete everything between the @section @endsection and make sure that the view layout you extend uses the admin namespace and you import the bootstrap 4 reset password html in the partial.
+
+The finished file should look like this:
+```php
+@extends('admin::layouts.app')
+@section('content')
+    @include('admin::partials.auth.passwords.email')
+@endsection
+```
