@@ -54,13 +54,13 @@
     @endif
     @if(Session::has('success_message'))
     <script>
-       // new HideMessage('successMessage');
+        new HideMessage('successMessage');
     </script>
     @endif
 
     @if (Session::has('errors'))
     <script>
-       // new HideMessage('errorsMessage');
+        new HideMessage('errorsMessage');
     </script>
     @endif
 
