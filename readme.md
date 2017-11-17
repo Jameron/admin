@@ -127,3 +127,11 @@ Update your reset password form view file:
     @include('admin::partials.auth.passwords.reset')
 @endsection
 ```
+
+11) Update your PasswordController redirect to path.
+
+```app/Http/Controllers/Auth/ResetPasswordController```
+
+```php
+    protected $redirectTo = '/dash';
+```
