@@ -355,6 +355,10 @@ form.padded {
     margin-right:0px;
 }
 
+ul, menu, dir {
+    list-style-type: none;
+}
+
 .table > thead > tr > th {
     border-bottom: 2px solid $grey_600;
 }
