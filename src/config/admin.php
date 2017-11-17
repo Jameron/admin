@@ -5,7 +5,7 @@ $nav = [
         'enabled' => true,
         'count' => 20
     ],
-    'theme' => 'dark',
+    'theme' => 'light',
     'sign_in_view' => [
         'heading' => 'Sign In.',
         'logo' => [
@@ -23,7 +23,7 @@ $nav = [
                 'route' => '/',
                 'alt' => 'Company logo'
             ],
-            'style' => 'dark',
+            'style' => 'light',
             'left' => [
                 'list' => []
             ],
