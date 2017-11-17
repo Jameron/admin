@@ -118,3 +118,12 @@ The finished file should look like this:
     @include('admin::partials.auth.passwords.email')
 @endsection
 ```
+
+Update your reset password form view file:
+
+```php
+@extends('admin::layouts.app')
+@section('content')
+    @include('admin::partials.auth.passwords.reset')
+@endsection
+```
