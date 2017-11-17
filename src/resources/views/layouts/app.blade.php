@@ -48,6 +48,7 @@
 
     <!-- Scripts -->
     <script src="/js/app.js"></script>
+    <script src="/js/Admin.js"></script>
     @if(Auth::check() && Auth::user()->roles()->first()->slug==='admin')
     <script src="/js/Regulator.js"></script>
     @endif

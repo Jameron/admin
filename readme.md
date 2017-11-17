@@ -80,6 +80,8 @@ Optionally if you would like to use the Admin Bootstrap 4 login form delete the 
 7) Update webpack config
 
 ```javascript
+
+   .js('resources/assets/admin/js/AdminDependencies.js', 'public/js/Admin.js')
    .sass('resources/assets/admin/sass/admin.scss', 'public/css')
 ```
 

@@ -22,6 +22,7 @@ class AdminServiceProvider extends ServiceProvider
             __DIR__.'/../config/admin.php' => config_path('admin.php'),
             __DIR__.'/../resources/views' => resource_path('views/vendor'),
             __DIR__.'/../resources/assets/sass' => resource_path('assets/admin/sass'),
+            __DIR__.'/../resources/assets/js' => resource_path('assets/admin/js'),
         ]);
 
         $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
