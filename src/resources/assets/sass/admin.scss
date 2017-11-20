@@ -194,6 +194,18 @@ body.dark a:hover {
     line-height: 1.42857143;
     text-decoration: none;
     color: $grey_500;
+    background-color: $white;
+    border: 1px solid ;
+    margin-left: -1px;
+}
+
+.pagination-dark > li > a, .pagination > li > span {
+    position: relative;
+    float: left;
+    padding: 6px 12px;
+    line-height: 1.42857143;
+    text-decoration: none;
+    color: $grey_500;
     background-color: $grey_600;
     border: 1px solid ;
     margin-left: -1px;
