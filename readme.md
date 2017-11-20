@@ -135,3 +135,24 @@ Update your reset password form view file:
 ```php
     protected $redirectTo = '/dash';
 ```
+
+12) Update your paginator class to use Bootstrap 4
+
+```php artisan vendor:publish```
+
+Select the option that shows this: 
+
+```php
+Illuminate\Pagination\PaginationServiceProvider
+```
+
+Then open up your bootsstrap/app.php and add these lines:
+
+Illuminate\Pagination\AbstractPaginator::defaultView("pagination::bootstrap-4");
+Illuminate\Pagination\AbstractPaginator::defaultSimpleView("pagination::simple-bootstrap-4");
+
+in you ```resources/views/vendor/bootstrap-4.blade.php``` file update this line to this:
+
+```html
+<ul class="pagination @if(config('admin.theme')=='dark')pagination-dark @endif">
+```

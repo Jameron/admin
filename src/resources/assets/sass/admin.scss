@@ -187,28 +187,28 @@ body.dark a:hover {
 }
 
 // PAGINATION STYLES
-.pagination > li > a, .pagination > li > span {
+.page-link {
     position: relative;
-    float: left;
-    padding: 6px 12px;
-    line-height: 1.42857143;
-    text-decoration: none;
-    color: $grey_500;
-    background-color: $white;
-    border: 1px solid ;
+    display: block;
+    padding: .5rem .75rem;
     margin-left: -1px;
+    line-height: 1.25;
+    color: $grey_700;
+    background-color: $white;
+    border: 1px solid $grey_600;
 }
 
-.pagination-dark > li > a, .pagination > li > span {
-    position: relative;
-    float: left;
-    padding: 6px 12px;
-    line-height: 1.42857143;
-    text-decoration: none;
+.pagination-dark > .page-item > .page-link {
     color: $grey_500;
     background-color: $grey_600;
-    border: 1px solid ;
-    margin-left: -1px;
+    border-color: $grey_500;
+}
+
+.pagination-dark > .page-item.active .page-link {
+    z-index: 2;
+    color: $grey_600;
+    background-color: $grey_500;
+    border-color: $grey_400;
 }
 
 #main_icon
