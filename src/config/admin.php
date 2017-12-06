@@ -141,7 +141,7 @@ if(file_exists(base_path() . '/vendor/jameron/regulator/') && isset($nav['side_n
 }
 
 if(file_exists(base_path() . '/vendor/jameron/invitations/') && isset($nav['side_nav']['roles']['admin'])) {
-    array_push($nav['side_nav']['roles']['admin']['buttons'], ['title'=>'Invitations','route'=> config('invitations.route'),'order'=>5]);
+    array_push($nav['side_nav']['roles']['admin']['buttons'], ['title'=>'Invitations','route'=> Config::get('invitations.route'),'order'=>5]);
 }
 
 function sortOrder($x,$y) {
