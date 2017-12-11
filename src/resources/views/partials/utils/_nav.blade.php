@@ -11,7 +11,6 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
 
-        <!-- Left Side Of Navbar -->
         <ul class="navbar-nav mr-auto">
             @if(!Auth::check() && count($nav['left']['list']))
                 @if(count($nav['left']['list']))
@@ -32,9 +31,7 @@
             @endif
         </ul>
 
-        <!-- Right Side Of Navbar -->
         <ul class="navbar-nav ml-auto">
-            <!-- Authentication Links -->
             @if (Auth::guest())
                 @foreach($nav['right']['list'] as $list_item)
                     <li class="nav-item"><a href="{{ url($list_item['route']) }}" class="nav-link">{{ $list_item['title'] }}</a></li>
@@ -47,12 +44,25 @@
                         @elseif(isset($list_item['list']) && isset($list_item['title']))
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown06" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    @if (strpos($list_item['title'], 'auth.') !== false) 
+                                    @if(is_array($list_item['title']))
+                                        @foreach($list_item['title'] as $title)
+                                            @if (strpos($title, 'auth.') !== false) 
+                                            <?php $property = substr($title, strpos($title, ".") + 1); ?>
+                                                {{ Auth::user()->$property  }} <span class="caret"></span>
+                                            @else
+                                                {{ $title }} <span class="caret"></span>
+                                            @endif
+                                        @endforeach
+                                    @else
+
+                                        @if (strpos($list_item['title'], 'auth.') !== false) 
                                         <?php $property = substr($list_item['title'], strpos($list_item['title'], ".") + 1); ?>
                                             {{ Auth::user()->$property  }} <span class="caret"></span>
                                         @else
                                             {{ $list_item['title'] }} <span class="caret"></span>
                                         @endif
+
+                                    @endif
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="dropdown06">
                                     @foreach($list_item['list'] as $key1 => $dropdown_list_item)

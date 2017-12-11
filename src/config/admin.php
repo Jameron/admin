@@ -59,7 +59,7 @@ $nav = [
                 'right' => [
                     'list' => [
                         [
-                            'title' => 'auth.name',
+                            'title' => ['auth.first_name', 'auth.last_name'],
                             'list' => [
                                 [
                                     'title' => 'Settings',
@@ -96,7 +96,7 @@ $nav = [
                 'right' => [
                     'list' => [
                         [
-                            'title' => 'auth.name',
+                            'title' => ['auth.first_name', 'auth.last_name'],
                             'list' => [
                                 [
                                     'title' => 'Settings',
