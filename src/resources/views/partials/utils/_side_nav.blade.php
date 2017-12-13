@@ -1,9 +1,9 @@
 @if($side_nav && $side_nav['show'])
-<div class="sidebar-wrapper @if($side_nav['theme']=='dark') sidebar-dark @endif">
+<div class="sidebar-wrapper @if($side_nav['theme']=='dark') sidebar-dark @endif" id="sideNav">
     <ul class="sidebar-nav" id="sidebar">
-        @foreach($side_nav['buttons'] as $button)
+        @foreach($side_nav['buttons'] as $key => $button)
         <li>
-            <a href="{!! url($button['route']) !!}" @if(Request::path()==$button['route']) class="active" @endif><span class="sub_icon glyphicon glyphicon-dashboard"></span> {{ $button['title'] }}</a>
+            <a href="{!! url($button['route']) !!}"> {!! (isset($button['icon'])) ? $button['icon'] : '' !!}<span class="long-text"> {{ $button['title'] }}</span></a>
         </li>
         @endforeach
     </ul>

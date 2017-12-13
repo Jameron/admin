@@ -54,7 +54,7 @@
     @endif
     @if(Session::has('success_message'))
     <script>
-        new HideMessage('successMessage');
+       new HideMessage('successMessage');
     </script>
     @endif
 
@@ -64,6 +64,12 @@
     </script>
     @endif
 
+    <script>
+    $('#toggleNav').click(function() {
+        $('#sideNav').toggleClass('collapsed');
+        $('#wrapper').toggleClass('collapsed');
+    });
+    </script>
     @yield('scripts')
     @yield('js')
 </body>

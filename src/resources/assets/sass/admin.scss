@@ -75,12 +75,32 @@ body.dark a:hover {
 .sidebar-wrapper {
     margin-top: 56px;
     left: 0;
-    width: 250px;
+    /*
+     *width: 250px;
+     */
     background: $grey_100;
     position: fixed;
     height: 100%;
     z-index: 10000;
     transition: all .4s ease 0s;
+}
+
+
+.collapsed > .sidebar-nav {
+    display: block;
+    float: left;
+    width: 50px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.collapsed > .sidebar-nav li a {
+    width: 50px;
+}
+
+.collapsed > .sidebar-nav li a > .long-text {
+    display: none;
 }
 
 .sidebar-nav {
@@ -135,7 +155,7 @@ body.dark a:hover {
 
 .sidebar-nav li {
     line-height: 40px;
-    text-indent: 20px;
+    text-indent: 9px;
 }
 
 .sidebar-nav li a {
@@ -252,6 +272,10 @@ body.dark a:hover {
         width: 150px;
         transition: all .4s ease 0s;
     }
+}
+
+#wrapper.collapsed {
+    padding-left: 50px;
 }
 
 // Navbar overrides
