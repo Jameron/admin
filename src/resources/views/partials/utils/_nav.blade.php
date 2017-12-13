@@ -22,15 +22,16 @@
                     &nbsp;
                 @endif
             @elseif(Auth::check() && count($nav['left']['list']))
-                @if(config('admin.show_collapse'))
-                    <li class="nav-item"><a href="#" class="nav-link" id="toggleNav"><i class="fa fa-bars" aria-hidden="true"></i></a></li>
-                @endif
                 @if(count($nav['left']['list']))
                     @foreach($nav['left']['list'] as $list_item)
                         <li class="nav-item"><a href="{{ url($list_item['route']) }}" class="nav-link">{{ $list_item['title'] }}</a></li>
                     @endforeach
                 @else
                     &nbsp;
+                @endif
+            @elseif(Auth::check())
+                @if(config('admin.show_collapse'))
+                    <li class="nav-item"><a href="#" class="nav-link" id="toggleNav"><i class="fa fa-bars" aria-hidden="true"></i></a></li>
                 @endif
             @endif
         </ul>
