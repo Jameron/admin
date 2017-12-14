@@ -1,3 +1,4 @@
+@if($nav['display'])
 <nav class="navbar navbar-expand-md fixed-top @if($nav['style']=='dark') navbar-dark @elseif($nav['style']=='light') navbar-light bg-light @endif">
     <a class="navbar-brand" href="{{ url($nav['logo']['route']) }}">
         @if(!empty($nav['logo']))
@@ -92,3 +93,4 @@
         </ul>
     </div>
 </nav>
+@endif

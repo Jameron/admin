@@ -17,6 +17,7 @@ $nav = [
         ]
     ],
     'nav' => [
+        'display' => false,
         'logged_out' => [
             'logo' => [
                 'image' => 'images/logo.svg',
@@ -43,6 +44,7 @@ $nav = [
         ],
         'roles' => [
             'admin' => [
+                'display' => true,
                 'logo' => [
                     'image' => 'images/logo.svg',
                     'class' => 'logo',
@@ -80,6 +82,7 @@ $nav = [
                 ]
             ],
             'user' => [
+                'display' => true,
                 'logo' => [
                     'image' => 'images/logo.svg',
                     'class' => 'logo',
