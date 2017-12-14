@@ -32,7 +32,6 @@
                 @else
                     &nbsp;
                 @endif
-            @elseif(Auth::check())
             @endif
         </ul>
 
