@@ -23,7 +23,7 @@
                     &nbsp;
                 @endif
             @elseif(Auth::check())
-                @if(config('admin.show_collapse'))
+                @if($nav['show_collapse']))
                     <li class="nav-item"><a href="#" class="nav-link" id="toggleNav"><i class="fa fa-bars" aria-hidden="true"></i></a></li>
                 @endif
                 @if(count($nav['left']['list']))

@@ -1,7 +1,6 @@
 <?php
 
-$nav = [
-    'show_collapse' => true,
+$settings = [
     'paginate' => [
         'enabled' => true,
         'count' => 20
@@ -17,8 +16,8 @@ $nav = [
         ]
     ],
     'nav' => [
-        'display' => false,
         'logged_out' => [
+            'display' => false,
             'logo' => [
                 'image' => 'images/logo.svg',
                 'class' => 'logo',
@@ -45,6 +44,7 @@ $nav = [
         'roles' => [
             'admin' => [
                 'display' => true,
+                'show_collapse' => true,
                 'logo' => [
                     'image' => 'images/logo.svg',
                     'class' => 'logo',
@@ -83,6 +83,7 @@ $nav = [
             ],
             'user' => [
                 'display' => true,
+                'show_collapse' => true,
                 'logo' => [
                     'image' => 'images/logo.svg',
                     'class' => 'logo',
@@ -138,14 +139,14 @@ $nav = [
     ]
 ];
 
-if(file_exists(base_path() . '/vendor/jameron/regulator/') && isset($nav['side_nav']['roles']['admin'])) { 
-    array_push($nav['side_nav']['roles']['admin']['buttons'], ['title'=>'Users','route'=>'admin/users','icon'=>'<i class="fa fa-users" aria-hidden="true"></i>','order'=>9]);
-    array_push($nav['side_nav']['roles']['admin']['buttons'], ['title'=>'Roles','route'=>'admin/roles','icon'=>'<i class="fa fa-gavel" aria-hidden="true"></i>','order'=>10]);
-    array_push($nav['side_nav']['roles']['admin']['buttons'], ['title'=>'Permissions','route'=>'admin/permissions','icon'=>'<i class="fa fa-hand-paper-o" aria-hidden="true"></i>','order'=>11]);
+if(file_exists(base_path() . '/vendor/jameron/regulator/') && isset($settings['side_nav']['roles']['admin'])) { 
+    array_push($settings['side_nav']['roles']['admin']['buttons'], ['title'=>'Users','route'=>'admin/users','icon'=>'<i class="fa fa-users" aria-hidden="true"></i>','order'=>9]);
+    array_push($settings['side_nav']['roles']['admin']['buttons'], ['title'=>'Roles','route'=>'admin/roles','icon'=>'<i class="fa fa-gavel" aria-hidden="true"></i>','order'=>10]);
+    array_push($settings['side_nav']['roles']['admin']['buttons'], ['title'=>'Permissions','route'=>'admin/permissions','icon'=>'<i class="fa fa-hand-paper-o" aria-hidden="true"></i>','order'=>11]);
 }
 
-if(file_exists(base_path() . '/vendor/jameron/invitations/') && isset($nav['side_nav']['roles']['admin'])) {
-    array_push($nav['side_nav']['roles']['admin']['buttons'], ['title'=>'Invitations','route'=> Config::get('invitations.route'),'icon'=>'<i class="fa fa-paper-plane-o" aria-hidden="true"></i>','order'=>5]);
+if(file_exists(base_path() . '/vendor/jameron/invitations/') && isset($settings['side_nav']['roles']['admin'])) {
+    array_push($settings['side_nav']['roles']['admin']['buttons'], ['title'=>'Invitations','route'=> Config::get('invitations.route'),'icon'=>'<i class="fa fa-paper-plane-o" aria-hidden="true"></i>','order'=>5]);
 }
 
 function sortOrder($x,$y) {
@@ -160,6 +161,6 @@ function sortOrder($x,$y) {
 
 }
 
-usort($nav['side_nav']['roles']['admin']['buttons'], 'sortOrder');
+usort($settings['side_nav']['roles']['admin']['buttons'], 'sortOrder');
 
-return $nav;
+return $settings;
