@@ -29,7 +29,8 @@ class AdminServiceProvider extends ServiceProvider
         $this->loadViewsFrom(resource_path('views/vendor'), 'admin');
 
         $this->app->bind('App\User', function ($app) {
-            return new \App\User();
+            $model = config('regulator.user.model');
+            return new $model;
         });
     }
 }

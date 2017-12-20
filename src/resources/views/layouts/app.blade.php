@@ -5,10 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>{{ config('app.name', 'Laravel') }}</title>
-    <link href="/css/app.css" rel="stylesheet">
+    <title>{{ config('app.name', 'Admin') }}</title>
     <link href="/css/admin.css" rel="stylesheet">
     <link href="/css/regulator.css" rel="stylesheet">
+    <link href="/css/app.css" rel="stylesheet">
 
     <script>
         window.Laravel = <?php echo json_encode([
@@ -17,8 +17,6 @@
     </script>
 </head>
 <body @if(config('admin.theme')=='dark') class="dark" @endif>
-    @if( Auth::check() && Auth::user()->roles()->first() && isset(config('admin.nav.roles')[Auth::user()->roles()->first()->slug])) 
-@endif
     @include('admin::partials.utils._nav', [
     'nav' => 
     ( Auth::check() && 
