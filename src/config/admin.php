@@ -140,13 +140,13 @@ $settings = [
 ];
 
 if(file_exists(base_path() . '/vendor/jameron/regulator/') && isset($settings['side_nav']['roles']['admin'])) { 
-    array_push($settings['side_nav']['roles']['admin']['buttons'], ['title'=>'Users','route'=>'admin/users','icon'=>'<i class="fa fa-users" aria-hidden="true"></i>','order'=>9]);
-    array_push($settings['side_nav']['roles']['admin']['buttons'], ['title'=>'Roles','route'=>'admin/roles','icon'=>'<i class="fa fa-gavel" aria-hidden="true"></i>','order'=>10]);
-    array_push($settings['side_nav']['roles']['admin']['buttons'], ['title'=>'Permissions','route'=>'admin/permissions','icon'=>'<i class="fa fa-hand-paper-o" aria-hidden="true"></i>','order'=>11]);
+    array_push($settings['side_nav']['roles']['admin']['buttons'], ['title'=>'Users','route'=> \Config::get('regulator.user.resource_route'), 'icon'=>'<i class="fa fa-users" aria-hidden="true"></i>','order'=>9]);
+    array_push($settings['side_nav']['roles']['admin']['buttons'], ['title'=>'Roles','route'=> \Config::get('regulator.role.resource_route'), 'icon'=>'<i class="fa fa-gavel" aria-hidden="true"></i>','order'=>10]);
+    array_push($settings['side_nav']['roles']['admin']['buttons'], ['title'=>'Permissions','route'=> \Config::get('regulator.permission.resource_route'),'icon'=>'<i class="fa fa-hand-paper-o" aria-hidden="true"></i>','order'=>11]);
 }
 
 if(file_exists(base_path() . '/vendor/jameron/invitations/') && isset($settings['side_nav']['roles']['admin'])) {
-    array_push($settings['side_nav']['roles']['admin']['buttons'], ['title'=>'Invitations','route'=> Config::get('invitations.route'),'icon'=>'<i class="fa fa-paper-plane-o" aria-hidden="true"></i>','order'=>5]);
+    array_push($settings['side_nav']['roles']['admin']['buttons'], ['title'=>'Invitations','route'=> \Config::get('invitations.resource_route'), 'icon'=>'<i class="fa fa-paper-plane-o" aria-hidden="true"></i>', 'order'=>12]);
 }
 
 function sortOrder($x,$y) {
