@@ -23,7 +23,8 @@
         ]); ?>
     </script>
 </head>
-<body @if(config('admin.theme')=='dark') class="dark" @endif id="app">
+<body @if(config('admin.theme')=='dark') class="dark" @endif>
+	<div id="app"></div>
     @include('admin::partials.utils._nav', [
     'nav' => 
     ( Auth::check() && 
