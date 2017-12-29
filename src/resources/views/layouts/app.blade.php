@@ -7,7 +7,14 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ config('app.name', 'Admin') }}</title>
     <link href="/css/admin.css" rel="stylesheet">
+
+    @if(file_exists(base_path() . '/vendor/jameron/regulator/'))
     <link href="/css/regulator.css" rel="stylesheet">
+    @endif
+    @if(file_exists(base_path() . '/vendor/jameron/import/'))
+    <link href="/css/upload.css" rel="stylesheet">
+    @endif
+
     <link href="/css/app.css" rel="stylesheet">
 
     <script>
@@ -47,8 +54,12 @@
     <!-- Scripts -->
     <script src="/js/app.js"></script>
     <script src="/js/Admin.js"></script>
-    @if(Auth::check() && Auth::user()->roles()->first()->slug==='admin')
-    <script src="/js/Regulator.js"></script>
+
+    @if(file_exists(base_path() . '/vendor/jameron/import/'))
+    <script src="/js/Upload.js"></script>
+	@endif
+
+    <link href="/css/regulator.css" rel="stylesheet">
     @endif
     @if(Session::has('success_message'))
     <script>
