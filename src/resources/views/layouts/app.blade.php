@@ -59,8 +59,6 @@
     <script src="/js/Upload.js"></script>
 	@endif
 
-    <link href="/css/regulator.css" rel="stylesheet">
-    @endif
     @if(Session::has('success_message'))
     <script>
        new HideMessage('successMessage');
