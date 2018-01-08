@@ -1,6 +1,7 @@
 <?php
 
 $settings = [
+    'cancel_route' => '/dash',
     'paginate' => [
         'enabled' => true,
         'count' => 20

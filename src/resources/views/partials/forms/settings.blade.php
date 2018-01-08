@@ -8,5 +8,5 @@
 </div>
 <p class="button-group">
     <button type="submit" class="btn btn-primary">{{ $submitButtonText }}</button>
-	<a href="{{ url('admin') }}" class="btn-alt">Cancel</a>
+	<a href="{{ url(config('admin.cancel_route')) }}" class="btn-alt">Cancel</a>
 </p>
