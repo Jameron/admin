@@ -7,6 +7,11 @@
                 <a href="{{ url($resource_route) }}">Clear Search</a>
             @endif
         </div>
+            <div class="col-md-2 text-right">
+                @if(Gate::check($permissions['create']))
+                    @include('partials._create_button', ['button' => $create_button])
+                @endcan
+            </div>
     </div>
 @endif
 <table class="table table-hover table-responsive table-striped">
