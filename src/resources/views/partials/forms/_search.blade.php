@@ -1,5 +1,7 @@
-<form action="{{ $search['route'] }}" method="GET" >
+<form action="{{ $search['route'] }}" method="GET" id="{{ (isset($id) ? $id : null) }}">
     <input type="hidden" name="_token" value="{{ csrf_token() }}">
+    <input type="hidden" name="sort_by" id="sort_by" value="">
+    <input type="hidden" name="order" id="order" value="">
     <div class="row">
         <div class="col-md-9">
             <label class="sr-only" for="inlineFormInputName2">Search</label>

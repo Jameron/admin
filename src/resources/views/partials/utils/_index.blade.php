@@ -5,9 +5,11 @@
         'is_advanced_search' => (isset($is_advanced_search)) ? $is_advanced_search : null,
         'permissions'=> (isset($permissions)) ? $permissions : null,
         'items' => (isset($items)) ? $items : null,
-        'create_button' => (isset($create_button)) ? $create_button : null
+        'create_button' => (isset($create_button)) ? $create_button : null,
+        'id'=>'systemsForm'
         ])
     @endif
+    <div class="app-table-responsive">
 <table class="table table-hover table-responsive table-striped">
     <thead>
         <tr>
@@ -62,6 +64,7 @@
         @endforeach
     </tbody>
 </table>
+</div>
 <div class="table-footer">
         {!! $items->setPath($resource_route)->appends([
             'sort_by' => $sort_by, 
