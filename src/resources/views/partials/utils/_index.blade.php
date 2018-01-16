@@ -7,11 +7,11 @@
                 <a href="{{ url($resource_route) }}">Clear Search</a>
             @endif
         </div>
-        <div class="col-md-2 text-right">
-            @if(Gate::check($permissions['create']))
-                @include('partials._create_button', ['button' => $create_button])
-            @endcan
-        </div>
+            <div class="col-md-2 text-right">
+                @if(Gate::check($permissions['create']))
+                    @include('partials._create_button', ['button' => $create_button])
+                @endcan
+            </div>
     </div>
 @endif
 <table class="table table-hover table-responsive table-striped">
@@ -35,7 +35,7 @@
     </thead>
     <tbody>
         @foreach($items as $item)
-            <tr>
+            <tr @if(isset($row_links_to_update) && $row_links_to_update) class="clickable-row" data-href='{{ url($resource_route . '/' . $item->id . '/edit')}}' @endif>
                 @foreach($columns as $key => $column)
                     <td data-column="{{ $column['column'] }}">
                         @if(isset($column['link']))
@@ -49,7 +49,6 @@
                 @endforeach
                 <td>
                     <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-                        <div class="btn-group mr-2" role="group" aria-label="First group">
                             @if(Gate::check($permissions['update']) && $show_update)
                                 <a href="{{ url( $resource_route . '/' . $item->id . '/edit' ) }}" class="btn btn-sm btn-secondary"><i class="fa fa-edit"></i></a>
                             @endif
@@ -70,3 +69,14 @@
 <div class="table-footer">
     {!! $items->appends(['sortBy' => $sort_by, 'order' => $order])->render() !!}
 </div>
+@if(isset($row_links_to_update) && $row_links_to_update) 
+    @section('js')
+<script>
+jQuery(document).ready(function($) {
+    $(".clickable-row").click(function() {
+        window.location = $(this).data("href");
+    });
+});
+</script>
+@endsection
+@endif
