@@ -31,7 +31,7 @@
     </thead>
     <tbody>
         @foreach($items as $item)
-            <tr @if(isset($row_links_to_update) && $row_links_to_update) class="clickable-row" data-href='{{ url($resource_route . '/' . $item->id . '/edit')}}' @endif>
+            <tr @if(isset($row_links) && $row_links['enabled']) class="clickable-row" data-href='{{ url($resource_route . '/' . $item->id )}}' @endif>
                 @foreach($columns as $key => $column)
                     <td data-column="{{ $column['column'] }}">
                         @if(isset($column['link']))
@@ -52,9 +52,9 @@
                             @endif
                             @if(Gate::check($permissions['delete']) && $show_delete)
                                 @include('admin::partials.buttons._delete_button', [
-                                    'route'         => $resource_route . '/' . $item->id,
+                                    'route'  => $resource_route . '/' . $item->id,
                                     'text'   => '',
-                                    'icon' => '<i class="fa fa-trash"></i>'
+                                    'icon'   => '<i class="fa fa-trash"></i>'
                                 ])
                             @endif
                         </div>
@@ -81,8 +81,8 @@
             'energized_end_date'    => (isset($energized_end_date)) ? $energized_end_date : null
         ])->render() !!}
 </div>
-@if(isset($row_links_to_update) && $row_links_to_update) 
-    @section('js')
+@if(isset($row_links) && $row_links['enabled']) 
+@section('js')
 <script>
 jQuery(document).ready(function($) {
     $(".clickable-row").click(function() {
