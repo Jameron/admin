@@ -1,19 +1,13 @@
 @if($search['show'])
-    <div class="row">
-        <div class="col-md-9">
-            @include('admin::partials.forms._search', ['search'=> $search])
-            <p class="subtle float-right mt-2">Displaying {!! $items->firstItem() !!} - {!! $items->lastItem() !!} of  {!! $items->total() !!} total</p>
-            @if(!empty($search['string']))
-                <a href="{{ url($resource_route) }}">Clear Search</a>
-            @endif
-        </div>
-            <div class="col-md-2 text-right">
-                @if(Gate::check($permissions['create']))
-                    @include('partials._create_button', ['button' => $create_button])
-                @endcan
-            </div>
-    </div>
-@endif
+    @include('admin::partials.forms._search', [
+        'search'=> $search, 
+        'advanced_search' => (isset($advanced_search)) ? $advanced_search : null,
+        'is_advanced_search' => (isset($is_advanced_search)) ? $is_advanced_search : null,
+        'permissions'=> (isset($permissions)) ? $permissions : null,
+        'items' => (isset($items)) ? $items : null,
+        'create_button' => (isset($create_button)) ? $create_button : null
+        ])
+    @endif
 <table class="table table-hover table-responsive table-striped">
     <thead>
         <tr>
@@ -69,7 +63,20 @@
     </tbody>
 </table>
 <div class="table-footer">
-    {!! $items->appends(['sortBy' => $sort_by, 'order' => $order])->render() !!}
+        {!! $items->setPath($resource_route)->appends([
+            'sort_by' => $sort_by, 
+            'order' => $order, 
+            'search_string'         => $search['string'],
+            'system_price_min'      => (isset($system_price_min)) ? $system_price_min : null,
+            'system_price_max'      => (isset($system_price_max)) ? $system_price_max : null,
+            'contract_type'         => (isset($contract_type)) ? $contract_type : null,
+            'contract_status'       => (isset($contract_status)) ? $contract_status : null,
+            'utility'               => (isset($utility)) ? $utility : null,
+            'system_size_min'       => (isset($system_size_min)) ? $system_size_min : null,
+            'system_size_max'       => (isset($system_size_max)) ? $system_size_max : null,
+            'energized_start_date'  => (isset($energized_start_date)) ? $energized_start_date : null,
+            'energized_end_date'    => (isset($energized_end_date)) ? $energized_end_date : null
+        ])->render() !!}
 </div>
 @if(isset($row_links_to_update) && $row_links_to_update) 
     @section('js')
