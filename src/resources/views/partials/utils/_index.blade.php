@@ -42,6 +42,8 @@
                             @if(isset($column['link']) && isset($column['link']['resource_route']))
                                 <a href="{{ url($column['link']['resource_route'] . '/' . $item->{$column['link']['id_column']} ) }}">{{ $item->{$column['column']}  }}</a>
                             @endif
+                        @elseif(isset($column['related']))
+                            {!! $item->{$column['column']}->{$column['related']['value_column']}  !!}
                         @else
                             {!! $item->{$column['column']}  !!}
                         @endif
