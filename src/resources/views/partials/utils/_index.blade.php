@@ -7,11 +7,11 @@
                 <a href="{{ url($resource_route) }}">Clear Search</a>
             @endif
         </div>
-            <div class="col-md-2 text-right">
-                @if(Gate::check($permissions['create']))
-                    @include('partials._create_button', ['button' => $create_button])
-                @endcan
-            </div>
+        <div class="col-md-2 text-right">
+            @if(Gate::check($permissions['create']))
+                @include('partials._create_button', ['button' => $create_button])
+            @endcan
+        </div>
     </div>
 @endif
 <table class="table table-hover table-responsive table-striped">
@@ -50,10 +50,10 @@
                 <td>
                     <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
                         <div class="btn-group mr-2" role="group" aria-label="First group">
-                            @if(Gate::check($permissions['update']))
+                            @if(Gate::check($permissions['update']) && $show_update)
                                 <a href="{{ url( $resource_route . '/' . $item->id . '/edit' ) }}" class="btn btn-sm btn-secondary"><i class="fa fa-edit"></i></a>
                             @endif
-                            @if(Gate::check($permissions['delete']))
+                            @if(Gate::check($permissions['delete']) && $show_delete)
                                 @include('admin::partials.buttons._delete_button', [
                                     'route'         => $resource_route . '/' . $item->id,
                                     'text'   => '',
