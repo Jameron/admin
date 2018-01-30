@@ -4,6 +4,7 @@
             @if (Session::has('message'))
                 @include('admin::partials.utils._success')
             @endif
+                @include('admin::partials.utils._errors')
             <div class="card" style="margin-top: 1rem;">
                 <h4 class="card-header">
                     {{ $header }}
