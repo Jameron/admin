@@ -9,6 +9,13 @@
         'id'=>'systemsForm'
         ])
     @endif
+
+    @if(!$search['show'] && Gate::check($permissions['create']))
+    <div class="mt-2 mb-2">
+        @include('partials._create_button', ['button' => $create_button])
+    </div>
+    @endcan
+
     <div class="app-table-responsive">
 <table class="table table-hover table-responsive table-striped">
     <thead>
